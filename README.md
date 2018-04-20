@@ -14,7 +14,7 @@ production work, the other two gives you nice intuitive visual editors that allo
 2. ``http://localhost:4000/playground`` this uses graphql-playground
 3. ``http://localhost:4000/graphqli`` this exposes graphqli console for manual testing
 
-NB of the graphql query ui would eventually be scraped as both perform almost the same thing
+**NB** The graphql query ui would eventually be scraped as both perform almost the same thing
 
 Serverless is currently used for running/deploying the app to aws lambda. 
 
@@ -22,17 +22,16 @@ Serverless is currently used for running/deploying the app to aws lambda.
 To run and **test** the app locally you need to:
 1. clone repository 
 2. setup aws **serverless** locally using your aws credentials to do this you have to add this varaibles to you environment
-
-```
-export AWS_ACCESS_KEY_ID=<your-key-here>
-export AWS_SECRET_ACCESS_KEY=<your-secret-key-here>
-```
+    ```
+    export AWS_ACCESS_KEY_ID=<your-key-here>
+    export AWS_SECRET_ACCESS_KEY=<your-secret-key-here>
+    ```
 You can visit the serverless doc here on [here](https://serverless.com/framework/docs/providers/aws/guide/credentials/) to configure multiple aws profile if you already have one setup.
 note, it's not advisable to use your root credentials make sure to create Iam user for this service. The serverless docs covers this
-extensively.
-
+extensive
 3. run ``npm install``
 4. run ``npm start``
 
-To **deploy** to aws 
+To **deploy** to aws
+
 1. ``run npm deploy``

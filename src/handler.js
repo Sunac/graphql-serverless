@@ -1,9 +1,8 @@
 import 'babel-polyfill'
 import { graphqlLambda, graphiqlLambda } from 'apollo-server-lambda'
 import lambdaPlayground from 'graphql-playground-middleware-lambda'
-// import { makeExecutableSchema } from 'graphql-tools'
 
-import GraphQLSchema from './schema/index'
+import Schema from './schema/schema'
 
 export function graphqlHandler (event, context, callback) {
   function callbackFilter (error, output) {
@@ -11,7 +10,8 @@ export function graphqlHandler (event, context, callback) {
     output.headers['Access-Control-Allow-Origin'] = '*'
     callback(error, output)
   }
-  const handler = graphqlLambda({ schema: GraphQLSchema, tracing: true })
+
+  const handler = graphqlLambda({ schema: Schema, tracing: true })
   return handler(event, context, callbackFilter)
 }
 

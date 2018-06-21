@@ -12,8 +12,8 @@ const Activity = `
 		# Thumbnail of the image url.
 		# This would be used to render activity list if needed
 		thumbnail: String
-		# Location where activity would be held
-		location: String
+		longitude: String
+		latitude: String
 		# Cost of the activity
 		price: Int!
 		# identify if the activity is active or not
@@ -35,6 +35,7 @@ const Activity = `
 		startDate: String
 		createdAt: String
 		updatedAt: String
+		categoryID: String
 	}
 `
 
@@ -44,4 +45,4 @@ const Activities = `
 	}
 `
 
-export default [Activity, Activities]
+export default [ Activity, Activities ]

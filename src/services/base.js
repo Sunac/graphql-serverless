@@ -36,7 +36,15 @@ class Base {
           : Promise.reject(new Error(`${this.collectionName} with id ${id} cannot be found`))
       }
     } catch (e) {
-      return Promise.reject(new Error(`Error could not get category: ${e.message}`))
+      return Promise.reject(new Error(`Error could not get ${this.type.toLowerCase()}: ${e.message}`))
+    }
+  }
+
+  async create (data) {
+    try {
+      await this.collection.add(data)
+    } catch (e) {
+      return Promise.reject(new Error(`Error could create ${this.collectionName.toLowerCase()}: ${e.message}`))
     }
   }
 }

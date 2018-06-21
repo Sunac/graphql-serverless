@@ -3,10 +3,10 @@ import Base from './base'
  * @class
  * @description
  * Defines all the resolvers APIs
- * for category. It extends the base class
+ * for activities. It extends the base class
  * that implements shared logic across services
  */
-class Category extends Base {
+class Activity extends Base {
   /**
    * @constructor
    * @description
@@ -15,8 +15,8 @@ class Category extends Base {
    * interaction with firestore.
    */
   constructor () {
-    super('Category')
+    super('Activity')
   }
 }
 
-export default Category
+export default Activity

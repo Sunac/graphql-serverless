@@ -2,10 +2,18 @@ import Seed from './'
 
 // seed category
 const seeder = new Seed('category')
-seeder.build()
+seeder
+  .clean()
+  .then(() => {
+    seeder
+      .loadData()
+      .build()
+  })
 
 // seed activity
 seeder
-  .setCollection('activity')
   .loadData('activity')
-  .build()
+  .clean()
+  .then(() => {
+    seeder.build()
+  })

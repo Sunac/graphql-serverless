@@ -96,7 +96,7 @@ class Seed {
         .setCollection(collectionName)
         .data
         .map((dataset) => {
-          this.collection.doc(dataset.id).set(dataset)
+          this.collection.doc(dataset.id).set(Object.assign({ testTime: new Date()}))
         })
       await Promise.all(promises)
     } catch (e) {

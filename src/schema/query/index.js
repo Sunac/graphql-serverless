@@ -1,14 +1,19 @@
 const RootQuery = `
   type RootQuery {
-    category(id: String!): Category
     activity(id: String!): Activity
     activities(
-      categoryID: String,
-      price: Int,
-      duration: Int,
-      spots: Int,
-      date: String,
-    ):  Activities
+			categoryID: String,
+			gtPrice: Int,
+			ltPrice: Int,
+			gtDuration: Int,
+			ltDuration: Int,
+			startDate: String,
+			endDate: String,
+			availability: Boolean,
+			spotsLeft: Int
+		): [Activity]
+    category(id: String!): Category
+    categories: [Category]
   }
 `
 

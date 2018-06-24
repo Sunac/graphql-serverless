@@ -40,10 +40,4 @@ const Activity = `
 	}
 `
 
-const Activities = `
-	type Activities {
-		Activities: [Activity]!
-	}
-`
-
-export default [ Activity, Activities ]
+export default [ Activity ]

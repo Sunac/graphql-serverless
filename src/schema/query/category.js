@@ -26,9 +26,4 @@ const Category = `
 	}
 `
 
-const Categories = `
-	type Categories {
-		Categories: [Category]
-	}
-`
-export default [ Categories, Category ]
+export default [ Category ]

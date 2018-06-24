@@ -13,7 +13,6 @@ const SchemaDefinition = `
     query: RootQuery
   }
 `
-
 export default makeExecutableSchema({
   typeDefs: [
     SchemaDefinition, RootQuery,
@@ -24,10 +23,10 @@ export default makeExecutableSchema({
     RootQuery: {
       category: (_, { id }) => category.get(id),
       activity: (_, { id }) => activity.get(id),
-      activities: () => activity.list()
+      activities: (_, args) => activity.list({ ...args, categoryID: args.categoryID })
     },
     Category: {
-      activities: (category, args) => activity.list(Object.assign({}, args, { categoryID: category.id }))
+      activities: (category, args) => activity.list({ ...args, categoryID: category.id })
     }
   }
 })

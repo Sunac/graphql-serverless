@@ -30,6 +30,7 @@ class Base {
    * @description
    * Gets a single category by id
    * @param {String} id of the category string
+   * @returns {Promise} return a promise
    */
   async get (id) {
     try {
@@ -45,6 +46,12 @@ class Base {
     }
   }
 
+  /**
+   * @description
+   * create creates a resource
+   * @param {Object} data to be saved
+   * @return {Array} array of dataset
+   */
   async create (data) {
     try {
       await this.collection.add(data)
@@ -54,6 +61,11 @@ class Base {
     }
   }
 
+  /**
+   * @description
+   * getResult gets the result of a query
+   * @return {Array} array of dataset
+   */
   getResult () {
     return this.results
   }

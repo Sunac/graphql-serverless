@@ -6,7 +6,8 @@
   "scripts": {
     "test": "npm run test",
     "start": "env-cmd ./config/.env.local serverless offline start",
-    "deploy-prod": "serverless --stage=production deploy"
+    "deploy-prod": "serverless --stage=production deploy",
+    "lint": "./node_modules/.bin/eslint ./src"
   },
   "repository": {
     "type": "git",
@@ -23,17 +24,19 @@
   "dependencies": {
     "apollo-server-lambda": "^1.3.5",
     "babel-polyfill": "^6.26.0",
+    "eslint": "^4.0.0",
     "firebase-admin": "^5.12.1",
     "graphql": "^0.10.5",
     "graphql-playground-middleware-lambda": "^1.2.0",
     "graphql-tools": "2.7.2",
     "lodash": "^4.17.10",
-    "moment": "^2.22.2"
+    "standard": "^11.0.1"
   },
   "devDependencies": {
     "aws-sdk": "^2.4.8",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "body-parser": "^1.15.2",
     "cors": "2.8.4",

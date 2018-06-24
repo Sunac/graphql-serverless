@@ -2,6 +2,7 @@ import Seeder from './Seeder'
 
 /**
  * @class
+ * @description
  * Seed class implements a run method
  * that seeds firestore database
  */
@@ -14,7 +15,7 @@ class Seed {
    * the data folder
    * @param {Array} collections this is an array of the
    * collection to seed
-   * @returns {Promise}
+   * @returns {Promise} returns a promise
    */
   static async run (collections = ['activity', 'category']) {
     const promises = collections
@@ -27,7 +28,5 @@ class Seed {
     return Promise.all(promises)
   }
 }
-Seed.run()
-// .then(() => process.exit(0))
 
 export default Seed

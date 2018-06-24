@@ -14,6 +14,8 @@ class Activity extends Base {
    * We want to initialize this class with the name of the
    * collection we want to interact with. this allows us to abstract
    * interaction with firestore.
+   *
+   * @returns {Void} returns void
    */
   constructor () {
     super('Activity')
@@ -29,6 +31,8 @@ class Activity extends Base {
    * @param {String} endDate activity end date
    * @example StartDate `2010-01-11` - `yy-mm-dd`
    * @example endDte    `2018-01-11` - `yy-mm-dd`
+   *
+   * @returns {Object} returns object instance
    */
   filterActivityByStartAndEnd (startDate, endDate) {
     if (startDate && endDate) {
@@ -50,6 +54,9 @@ class Activity extends Base {
    * filterActivityByDuration filters activities by duration
    * @param {String} gtDuration duration greater or equal to i.e 2
    * @param {String} ltDuration duration lesser or equal to i.e 10
+   *
+   * @returns {Void} returns void
+
    */
   filterActivityByDuration (gtDuration, ltDuration) {
     if (gtDuration && ltDuration) {
@@ -71,6 +78,8 @@ class Activity extends Base {
   * @description
   * filterBySpotsLeft filters activities by spots left
   * @param {String} spotsLeft sports greater or equal to i.e 12
+  *
+  * @returns {Object} returns object instance
   */
   filterBySpotsLeft (spotsLeft) {
     if (spotsLeft) {
@@ -88,17 +97,19 @@ class Activity extends Base {
    * @param {String} categoryID we want to filter by category
    * @param {Integer} gtPrice we want to filter activity base on price
    * greater or equal to a specified amount
-   * @param {Integer} gtPrice we want to filter activity base on price
+   * @param {Integer} ltPrice we want to filter activity base on price
    * greater or equal to a specified amount
    * @param {Integer} gtDuration we want to filter activity base on duration
    * greater or equal to a specified time
-   * @param {Integer} gtDuration we want to filter activity base on duration
+   * @param {Integer} ltDuration we want to filter activity base on duration
    * lesser or equal to a specified time
    * @param {String} city, we activities for a specific city
    * @param {String} startDate, we activities that starts from a specific date
    * @param {String} endDate, we activities that ends from a specific date
    * @param {String} spotsLeft, we want to filter by activities that has a minimum sport left
    * @param {String} availability, we want to filter by activities that is available
+   *
+   * @returns {Promise} returns promise
    */
   async list ({
     categoryID,
@@ -117,7 +128,7 @@ class Activity extends Base {
       let query = this.collection
       // we want to do as much query with firestore and
       // leave the rest to lodash
-      query = query.where('availability', '==', availability)
+      query = query.where('availability', '==', availability || true)
 
       // we want to filter activities by categoryID
       if (categoryID) {

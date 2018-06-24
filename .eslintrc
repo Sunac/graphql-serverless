@@ -1,8 +1,7 @@
 {
-    "extends": "standard",
-    "rules": {
+  "extends": "standard",
+  "rules": {
     "quotes": [2, "single"],
-    "semi":[2,"always"],
     "import/no-unresolved": 0,
     "one-var": 0,
     "indent": [2, 2],
@@ -11,7 +10,7 @@
     "consistent-return": 0,
     "no-param-reassign": 0,
     "comma-dangle": 0,
-    "max-len": [2, 80, 2],
+    "max-len": [2, 100, 2],
     "curly": [1, "multi-line"],
     "no-shadow": [1, {
       "allow": ["req", "res", "err"]
@@ -24,7 +23,7 @@
     }],
     "require-jsdoc": [1, {
       "require": {
-        "FunctionDeclaration": true,
+        "FunctionDeclaration": false,
         "MethodDefinition": true,
         "ClassDeclaration": true
       }

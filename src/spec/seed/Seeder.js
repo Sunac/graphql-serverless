@@ -1,13 +1,20 @@
 import { database } from '../../utils/firebase'
-
+/**
+ * @class
+ * @description
+ * Implements specific methods tha allows us seed
+ * firestore database
+ */
 class Seed {
   /**
+   * @constructor
    * @description
-   * We want to be able to specify a default
+   * constructorWe want to be able to specify a default
    * collection to seed when initiating the
    * seed class
    * @param {String} collectionName the name of the collection
    * to seed
+   * @returns {Void} returns void
    */
   constructor (collectionName) {
     this.collectionName = collectionName
@@ -29,7 +36,13 @@ class Seed {
 
     return this
   }
-
+  /**
+   * @description
+   * formatDataTime converts the string time to a Date object
+   * this allows us set any date type to type timeStamp on
+   * firestore
+   * @returns {Object} returns the seed object instance.
+   */
   formatDataTime () {
     this.data = this.data.map((dataset) => {
       for (const key in dataset) {
@@ -47,6 +60,11 @@ class Seed {
     return this
   }
 
+  /**
+   * @description
+   * getData gets dummy data to seed
+   * @return {Array} array of dataset
+   */
   getData () {
     return this.data
   }
@@ -70,6 +88,7 @@ class Seed {
    * wipes collection that is currently set. This method
    * would clean the entire database, So it must ne used with
    * care
+   * @param {Integer} batchSize batch you want delete to occur
    * @return {Object} returns object instance
    */
   async clean (batchSize = 1000) {
@@ -110,6 +129,8 @@ class Seed {
    * data of that instance
    * @param {String} fileName name of the file to load.
    * @param {String} collectionName name of the collection to set
+   *
+   * @returns {Promise} returns a promise
    */
   async build (fileName, collectionName) {
     const promises = this

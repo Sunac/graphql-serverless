@@ -63,12 +63,34 @@ class Base {
 
   /**
    * @description
+   * getCollection gets firestore
+   * @return {Array} array of dataset
+   */
+  getCollection () {
+    return this.collection
+  }
+
+  /**
+   * @description
    * getResult gets the result of a query
    * @return {Array} array of dataset
    */
   getResult () {
     return this.results
   }
+
+  /**
+   * @description
+   * setResult gets the result of a query
+   * @param {Any} dataset
+   * @return {Array} array of dataset
+   */
+  setResult (dataset) {
+    this.results.push(dataset)
+
+    return this
+  }
+
   /**
    * @description
    * filterGreaterOrEqual filters a result set base

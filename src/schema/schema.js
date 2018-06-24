@@ -23,7 +23,8 @@ export default makeExecutableSchema({
     RootQuery: {
       category: (_, { id }) => category.get(id),
       activity: (_, { id }) => activity.get(id),
-      activities: (_, args) => activity.list({ ...args, categoryID: args.categoryID })
+      activities: (_, args) => activity.list({ ...args, categoryID: args.categoryID }),
+      categories: (_, args) => category.list(args)
     },
     Category: {
       activities: (category, args) => activity.list({ ...args, categoryID: category.id })

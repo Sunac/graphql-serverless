@@ -122,13 +122,13 @@ class Activity extends Base {
     startDate,
     endDate,
     spotsLeft,
-    availability
+    availability = true
   }) {
     try {
       let query = this.collection
       // we want to do as much query with firestore and
       // leave the rest to lodash
-      query = query.where('availability', '==', availability || true)
+      query = query.where('availability', '==', availability)
 
       // we want to filter activities by categoryID
       if (categoryID) {
@@ -152,7 +152,7 @@ class Activity extends Base {
       const snapshot = await query.get()
 
       // we want to get all data.
-      snapshot.forEach((doc) => this.results.push(doc.data()))
+      snapshot.forEach((doc) => this.setResult(doc.data()))
 
       // firestore limits queries on multiple fields with <>
       // so we're going to use lodash to achieve that our selves

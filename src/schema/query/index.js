@@ -13,7 +13,12 @@ const RootQuery = `
 			spotsLeft: Int
 		): [Activity]
     category(id: String!): Category
-    categories: [Category]
+    categories(
+      limit: Int
+      page: Int
+      sort: String
+      orderDby: String
+    ): [Category]
   }
 `
 

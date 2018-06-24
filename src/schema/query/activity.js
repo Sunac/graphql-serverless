@@ -33,6 +33,7 @@ const Activity = `
 		startTime: String!
 		endTime: String!
 		startDate: String
+		endDate: String
 		createdAt: String
 		updatedAt: String
 		categoryID: String

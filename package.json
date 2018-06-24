@@ -26,7 +26,9 @@
     "firebase-admin": "^5.12.1",
     "graphql": "^0.10.5",
     "graphql-playground-middleware-lambda": "^1.2.0",
-    "graphql-tools": "2.7.2"
+    "graphql-tools": "2.7.2",
+    "lodash": "^4.17.10",
+    "moment": "^2.22.2"
   },
   "devDependencies": {
     "aws-sdk": "^2.4.8",

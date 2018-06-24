@@ -11,7 +11,18 @@ const Category = `
 		# Date the category is updated
 		updatedAt: String
 		# List of all category that belongs to this category
-		# Activities: [Activity]
+		activities(
+			id: String,
+			categoryID: String,
+			gtPrice: Int,
+			ltPrice: Int,
+			gtDuration: Int,
+			ltDuration: Int,
+			startDate: String,
+			endDate: String,
+			availability: Boolean,
+			spotsLeft: Int
+		): [Activity]
 	}
 `
 

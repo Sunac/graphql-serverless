@@ -23,7 +23,11 @@ export default makeExecutableSchema({
   resolvers: {
     RootQuery: {
       category: (_, { id }) => category.get(id),
-      activity: (_, { id }) => activity.get(id)
+      activity: (_, { id }) => activity.get(id),
+      activities: () => activity.list()
+    },
+    Category: {
+      activities: (category, args) => activity.list(Object.assign({}, args, { categoryID: category.id }))
     }
   }
 })

@@ -1,0 +1,6 @@
+#exclude all query
+src/schema/query
+
+package.json
+firebase.json
+README.md

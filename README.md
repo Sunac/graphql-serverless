@@ -1,5 +1,5 @@
-# Passport Mauritius server
-This is the server side implementation of the passport Mauritius official web app. The main goal of this app is to set up a server architecture that enables quick iteration and fast development cycle. For this, we have decided to adopt latest modern technologies and architecture
+# Graphql serverless
+The main goal of this app is to set up a server architecture that enables quick iteration and fast development cycle. For this, we have decided to adopt latest modern technologies and architecture
 
 ## Technology
 1. [Nodejs](https://nodejs.org/en/)
